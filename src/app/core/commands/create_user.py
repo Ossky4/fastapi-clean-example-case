@@ -5,7 +5,6 @@ from enum import StrEnum
 from typing import TypedDict
 from uuid import UUID
 
-from app.core.commands.exceptions import UsernameAlreadyExistsError
 from app.core.commands.ports.flusher import Flusher
 from app.core.commands.ports.transaction_manager import TransactionManager
 from app.core.commands.ports.user_tx_storage import UserTxStorage
@@ -84,10 +83,7 @@ class CreateUser:
             role=role,
         )
         self._user_tx_storage.add(user)
-        try:
-            await self._flusher.flush()
-        except UsernameAlreadyExistsError:
-            raise
+        await self._flusher.flush()
 
         await self._transaction_manager.commit()
 
