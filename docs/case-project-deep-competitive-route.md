@@ -107,3 +107,7 @@ Además, el propio proyecto declara un runtime objetivo superior, por lo que per
 Dar este caso por cerrado.
 
 Cualquier continuación debería hacerse solo en un entorno alineado con la versión de Python objetivo del proyecto, y como hipótesis nueva explícita, no como continuación inercial de este mismo caso.
+
+
+## Documento relacionado
+- [Comparativa final — ocho Case Projects](./comparativa-final-ocho-case-projects.md)
